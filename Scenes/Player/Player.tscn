@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/Art/Player/player.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Art/Misc/material_1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Art/Misc/material_2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Art/Misc/money.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Misc/font.tres" type="Theme" id=6]
+[ext_resource path="res://Assets/Music/mixkit-cat-walk-371.mp3" type="AudioStream" id=7]
+
+[sub_resource type="CapsuleShape2D" id=1]
+height = 16.0
+
+[node name="Player" type="KinematicBody2D" groups=["player"]]
+z_index = 1
+script = ExtResource( 2 )
+
+[node name="Money" type="Label" parent="."]
+margin_left = -480.0
+margin_top = -216.0
+margin_right = -437.0
+margin_bottom = -202.0
+theme = ExtResource( 6 )
+text = "Money"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Moeny" type="Sprite" parent="."]
+position = Vector2( -496, -213 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 5 )
+
+[node name="Mat_1" type="Label" parent="."]
+margin_left = -480.0
+margin_top = -280.0
+margin_right = -440.0
+margin_bottom = -266.0
+theme = ExtResource( 6 )
+text = "mat_1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Material_1" type="Sprite" parent="."]
+position = Vector2( -496, -275 )
+texture = ExtResource( 3 )
+
+[node name="Mat_2" type="Label" parent="."]
+margin_left = -480.0
+margin_top = -248.0
+margin_right = -440.0
+margin_bottom = -234.0
+theme = ExtResource( 6 )
+text = "mat_2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Material_2" type="Sprite" parent="."]
+position = Vector2( -496, -243 )
+texture = ExtResource( 4 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
+hframes = 2
+vframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1, 0 )
+scale = Vector2( 2, 2 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 7 )
+volume_db = 0.4
+autoplay = true

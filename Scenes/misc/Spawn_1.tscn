@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Misc/Spawn_1.gd" type="Script" id=1]
+
+[node name="Spawn_1" type="Button"]
+margin_left = -32.0
+margin_top = -24.0
+margin_right = 35.0
+margin_bottom = 24.0
+text = "Spawn"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pos" type="Position2D" parent="."]
